@@ -35,12 +35,12 @@ function mergeObjects(obj1,obj2){
 }
 
 let element_scripts = [
-    [new v9.script({signal: v9.utilities.system_signal_converter(`scripts_storage/`),trigger([ov,script]){if (!script.proto.onInsert)return;v9.utilities.ctxUse(script, this, `onInsert`)(...script.info);}})]
-    ,[new v9.script({signal: v9.utilities.system_signal_converter(`scripts_storage/`,`delete`),trigger([script]){if (!script.proto.onRemove)return;v9.utilities.ctxUse(script, this, `onRemove`)(...script.info);}})]
+    [new v9.script({signal: v9.utilities.system_signal_converter(`scripts_storage/`),fired([ov,script]){if (!script.proto.onInsert)return;v9.utilities.ctxUse(script, this, `onInsert`)(...script.info);}})]
+    ,[new v9.script({signal: v9.utilities.system_signal_converter(`scripts_storage/`,`delete`),fired([script]){if (!script.proto.onRemove)return;v9.utilities.ctxUse(script, this, `onRemove`)(...script.info);}})]
     ,[
         new v9.script({
             signal: `unlocked:render`
-            ,trigger(ctx){
+            ,fired(ctx){
                 console.log(`ahhhh`);
                 ctx.fillRect(0,0,50,50);
             }

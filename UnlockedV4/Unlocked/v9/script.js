@@ -1,6 +1,6 @@
 export class script {
     #defaults = {
-        trigger:function(){}
+        fired(){}
         ,tags:[]
         ,signal: `script`
     }

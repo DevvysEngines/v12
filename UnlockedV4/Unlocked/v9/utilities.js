@@ -37,7 +37,7 @@ export class utilities {
         return newpath;
     }
     static system_signal_converter(signal=`/`,type=`set`){
-        return `*emit?-{system-${type}}:{>${utilities.normalize_path(signal).join(`>`)}}*`;
+        return `*v9$i$m:{system-${type}}:{>${utilities.normalize_path(signal).join(`>`)}}*`;
     }
     static ctxUse(script,module,type){
         return (...args)=>{
